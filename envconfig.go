@@ -175,6 +175,7 @@ func readStruct(value reflect.Value, ctx *context) (nonnil bool, err error) {
 			var nonnilin bool
 			nonnilin, err = readStruct(field, &context{
 				name:            combineName(ctx.name, name),
+				prefix:          ctx.prefix,
 				optional:        ctx.optional || tag.optional,
 				defaultVal:      tag.defaultVal,
 				parents:         parents,
@@ -440,7 +441,6 @@ func makeAllPossibleKeys(ctx *context) (res []string) {
 		}
 		ctx.name = combineName(ctx.prefix, ctx.customName)
 	}
-
 	tmp := make(map[string]struct{})
 	{
 		n := []rune(ctx.name)
