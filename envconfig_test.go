@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/HiFX/envconfig"
 	"github.com/stretchr/testify/require"
-	"github.com/vrischmann/envconfig"
 )
 
 func TestParseSimpleConfig(t *testing.T) {
