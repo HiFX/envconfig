@@ -432,7 +432,7 @@ func readValue(ctx *context) (string, error) {
 
 func makeAllPossibleKeys(ctx *context) (res []string) {
 	if ctx.customName != "" {
-		return []string{ctx.customName}
+		return []string{combineName(ctx.name, ctx.customName)}
 	}
 
 	tmp := make(map[string]struct{})
